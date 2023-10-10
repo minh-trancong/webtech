@@ -233,6 +233,10 @@ html, body {
     font-weight: bold;
 }
 
+.img-thumbnail{
+    box-shadow: 10px 10px 5px grey;
+}
+
 .row hr
 {
     line-height: 4px;
