@@ -1,5 +1,6 @@
 *{
     margin:0px;
+    font-family: 'Times';
 }
 
 .clear { clear: both }
@@ -236,7 +237,10 @@ html, body {
 .img-thumbnail{
     box-shadow: 10px 10px 5px grey;
 }
-
+.icon{
+    width: 15px;
+    height: 15px;
+}
 .row hr
 {
     line-height: 4px;
