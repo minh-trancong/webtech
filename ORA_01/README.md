@@ -1,5 +1,5 @@
 # ORA #1 - HTML, CSS
-1.  **Tạo trang web “THÔNG TIN CÁ NHÂN”**: Trang web này cần có layout, màu sắc, font chữ giống với trang thông tin cá nhân trên trang ctt-sIs.hust.edu.vn. Nội dung thông tin và ảnh lấy theo thông tin cá nhân của sinh viên.
+1.  **Tạo trang web “THÔNG TIN CÁ NHÂN”**: Trang web này cần có layout, màu sắc, font chữ giống với trang thông tin cá nhân trên trang ctt-sis.hust.edu.vn. Nội dung thông tin và ảnh lấy theo thông tin cá nhân của sinh viên.
 
 2. **Sử dụng CSS để thiết lập style hiển thị**:
     - Các mục tiêu đề cần đặt CSS chung để hiển thị: font Times, kích thước 14, bold, màu Red.
