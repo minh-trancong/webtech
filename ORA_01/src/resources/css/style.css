@@ -202,7 +202,6 @@ html, body {
 }
 
 .MainContent
-.MainContent
 {
     padding: 0px 25px 25px 25px;
 }
@@ -226,8 +225,12 @@ html, body {
 
 .labelText {
     font-family: 'Times';
-    font-weight: bold;
     font-style: italic;
+}
+
+.contentLabelText{
+    font-family: 'Times';
+    font-weight: bold;
 }
 
 .row hr
