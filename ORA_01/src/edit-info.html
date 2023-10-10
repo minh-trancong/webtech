@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf8">
+        <meta profileAttr="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>CTT | Thay đổi thông tin </title>
+        <link rel="icon" href="resources/img/logo-hust.png" type="image/x-icon">
+
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="MainContentTitle">
+                <h3 class="Title">THAY ĐỔI THÔNG TIN CÁ NHÂN</h3>
+                <hr>
+            </div>
+            <form id="ProfileForm" onsubmit="saveData();">
+                <h3 class="Title">THÔNG TIN CÁ NHÂN</h3>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="studentId" class="labelText">MSSV: </label>
+                            <input type="text" class="form-control" id="studentId" placeholder="Nhập mã số sinh viên"
+                                    profileAttr="studentId">
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="labelText">Họ và tên:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nhập họ và tên"
+                                    profileAttr="fullName">
+                        </div>
+                        <div class="form-group">
+                            <label for="yearOfAdmission" class="labelText">Năm vào trường:</label>
+                            <input type="number" class="form-control" id="yearOfAdmission"
+                                    placeholder="Nhập năm vào trường" profileAttr="yearOfAdmission">
+                        </div>
+                        <div class="form-group">
+                            <label for="educationLevel" class="labelText">Bậc đào tạo:</label>
+                            <select class="form-control" id="educationLevel" profileAttr="educationLevel">
+                                <option value="" hidden>Chọn bậc học</option>
+                                <option value="Đại học">Đại học</option>
+                                <option value="Thạc sĩ">Thạc sĩ</option>
+                                <option value="Tiến sĩ">Tiến sĩ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="program" class="labelText">Chương trình:</label>
+                            <input type="text" class="form-control" id="program" placeholder="Nhập chương trình học"
+                                    profileAttr="program">
+                        </div>
+                        <div class="form-group">
+                            <label for="managingDepartment" class="labelText">Khoa/Viện quản lý:</label>
+                            <input type="text" class="form-control" id="managingDepartment"
+                                    placeholder="Nhập khoa/viện quản lý" profileAttr="managingDepartment">
+                        </div>
+                        <div class="form-group">
+                            <label for="studyStatus" class="labelText">Tình trạng học tập:</label>
+                            <input type="text" class="form-control" id="studyStatus"
+                                    placeholder="Nhập tình trạng học tập" profileAttr="studyStatus">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="gender" class="labelText">Giới tính:</label>
+                            <select class="form-control" id="gender" profileAttr="gender">
+                                <option value="" hidden>Chọn giới tính</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Khác">Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="class" class="labelText">Lớp: </label>
+                            <input type="text" class="form-control" id="class" placeholder="Nhập tên lớp"
+                                    profileAttr="class">
+                        </div>
+                        <div class="form-group">
+                            <label for="course" class="labelText">Khoá học: </label>
+                            <input type="text" class="form-control" học id="course" placeholder="Nhập khoá học"
+                                    profileAttr="course">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="labelText">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email"
+                                    profileAttr="email">
+                        </div>
+                    </div>
+                </div>
+                <h3 class="Title">THÔNG TIN HỌC TẬP</h3>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="semesterSummary" class="labelText">Tổng kết học kỳ:</label>
+                            <input type="text" class="form-control" id="semesterSummary"
+                                    placeholder="Nhập tổng kết học kỳ" profileAttr="semesterSummary">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cumulativeAverage" class="labelText">Trung bình tích lũy:</label>
+                            <input type="text" class="form-control" id="cumulativeAverage"
+                                    placeholder="Nhập trung bình tích lũy" profileAttr="cumulativeAverage">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registeredCreditDebt" class="labelText">Số TC nợ đăng ký:</label>
+                            <input type="number" class="form-control" id="registeredCreditDebt"
+                                    placeholder="Nhập số TC nợ đăng ký" profileAttr="registeredCreditDebt">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="accumulatedCredits" class="labelText">Số TC tích lũy:</label>
+                            <input type="number" class="form-control" id="accumulatedCredits"
+                                    placeholder="Nhập số TC tích lũy" profileAttr="accumulatedCredits">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentLevel" class="labelText">Trình độ sinh viên:</label>
+                            <input type="text" class="form-control" id="studentLevel"
+                                    placeholder="Nhập trình độ sinh viên" profileAttr="studentLevel">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="labelText">Mức cảnh báo:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel1"
+                                        value="M0" profileAttr="warningLevel" checked>
+                                <label class="form-check-label" for="warningLevel1">
+                                    M0
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel2"
+                                        value="M1" profileAttr="warningLevel">
+                                <label class="form-check-label" for="warningLevel2">
+                                    M1
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel3"
+                                        value="M2" profileAttr="warningLevel">
+                                <label class="form-check-label" for="warningLevel3">
+                                    M2
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel4"
+                                        value="M3" profileAttr="warningLevel">
+                                <label class="form-check-label" for="warningLevel4">
+                                    M3
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <h3 class="Title">THÔNG TIN CÁ NHÂN</h3>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="ethnicity" class="labelText">Dân tộc:</label>
+                            <input type="text" class="form-control" id="ethnicity" placeholder="Nhập dân tộc" profileAttr="ethnicity">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="highSchoolGraduationYear" class="labelText">Năm TN cấp 3:</label>
+                            <input type="number" class="form-control" id="highSchoolGraduationYear" placeholder="Nhập năm TN cấp 3" profileAttr="highSchoolGraduationYear">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address" class="labelText">Địa chỉ:</label>
+                            <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ" profileAttr="address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="idNumber" class="labelText">Số CMTND:</label>
+                            <input type="number" class="form-control" id="idNumber" placeholder="Nhập số CMTND" profileAttr="idNumber">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="placeOfIssue" class="labelText">Nơi cấp:</label>
+                            <input type="text" class="form-control" id="placeOfIssue" placeholder="Nhập nơi cấp" profileAttr="placeOfIssue">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fatherName" class="labelText">Họ tên bố:</label>
+                            <input type="text" class="form-control" id="fatherName" placeholder="Nhập họ tên bố" profileAttr="fatherName">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fatherBirthYear" class="labelText">Năm sinh bố:</label>
+                            <input type="number" class="form-control" id="fatherBirthYear" placeholder="Nhập năm sinh bố" profileAttr="fatherBirthYear">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fatherOccupation" class="labelText">Nghề nghiệp bố:</label>
+                            <input type="text" class="form-control" id ="fatherOccupation" placeholder ="Nhập nghề nghiệp bố " profileAttr ="fatherOccupation ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fatherPhone" class="labelText">Điện thoại bố:</label>
+                            <input type="tel" class="form-control" id="fatherPhone" placeholder="Nhập số điện thoại của bố" profileAttr="fatherPhone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fatherEmail" class="labelText">Email bố:</label>
+                            <input type="email" class="form-control" id="fatherEmail" placeholder="Nhập email của bố" profileAttr="fatherEmail">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="religion" class="labelText">Tôn giáo:</label>
+                            <input type="text" class="form-control" id="religion" placeholder="Nhập tôn giáo" profileAttr="religion">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="highSchool" class="labelText">Trường THPT:</label>
+                            <input type="text" class="form-control" id="highSchool" placeholder="Nhập trường THPT" profileAttr="highSchool">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="residence" class="labelText">Hộ khẩu:</label>
+                            <input type="text" class="form-control" id="residence" placeholder="Nhập hộ khẩu" profileAttr="residence">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber" class="labelText">Số điện thoại:</label>
+                            <input type="tel" class="form-control" id ="phoneNumber" placeholder ="Nhập số điện thoại" profileAttr ="phoneNumber">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motherName" class="labelText">Họ tên mẹ:</label>
+                            <input type="text" class="form-control" id="motherName" placeholder="Nhập họ tên mẹ" profileAttr="motherName">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motherBirthYear" class="labelText">Năm sinh mẹ:</label>
+                            <input type="number" class="form-control" id="motherBirthYear" placeholder="Nhập năm sinh mẹ" profileAttr="motherBirthYear">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motherOccupation" class="labelText">Nghề nghiệp mẹ:</label>
+                            <input type="text" class="form-control" id ="motherOccupation" placeholder ="Nhập nghề nghiệp mẹ" profileAttr ="motherOccupation">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motherPhone" class="labelText">Điện thoại mẹ:</label>
+                            <input type="tel" class="form-control" id="motherPhone" placeholder="Nhập số điện thoại của mẹ" profileAttr="motherPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="motherEmail" class="labelText">Email mẹ:</label>
+                            <input type="email" class="form-control" id="motherEmail" placeholder="Nhập email của mẹ" profileAttr="motherEmail">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Add more fields as necessary -->
+                <button type="submit" class="btn btn-primary">OK</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">Cancel
+                </button>
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            window.onload = function () {
+                let data = JSON.parse(localStorage.getItem('profileInfo'));
+
+                if (data) {
+                    // Lấy danh sách tất cả các phần tử có thuộc tính name
+                    let elements = document.querySelectorAll('#ProfileForm [profileAttr]');
+
+                    // Lặp qua từng phần tử và đặt giá trị placeholder bằng giá trị tương ứng từ data
+                    for (let element of elements) {
+                        if (data[element.getAttribute('profileAttr')]) {
+                            if (element.tagName === 'SELECT') {
+                                element.options[0].text = data[element.getAttribute('profileAttr')];
+                            } else if (element.type === 'radio') {
+                                if (element.value === data[element.getAttribute('profileAttr')]) {
+                                    element.checked = true;
+                                }
+                            } else {
+                                element.placeholder = data[element.getAttribute('profileAttr')];
+                            }
+                        }
+                    }
+                }
+            }
+
+            function saveData() {
+                let data = JSON.parse(localStorage.getItem('profileInfo'));
+                let elements = document.querySelectorAll('#ProfileForm [profileAttr]');
+
+                for (let e of elements) {
+                    if (e.type === 'radio') {
+                        if (e.checked) {
+                            data[e.getAttribute('profileAttr')] = e.value;
+                        }
+                    } else if (e.value !== '') {
+                        data[e.getAttribute('profileAttr')] = e.value;
+                    }
+                }
+
+                localStorage.setItem('profileInfo', JSON.stringify(data));
+                alert('Thay đổi thông tin thành công!');
+            }
+    </script>
+    </body>
+</html>
