@@ -41,14 +41,14 @@
 
                         <img class="img-thumbnail dxeImage_Mulberry"
                                 id="ctl00_ctl00_contentPane_MainPanel_MainContent_UserImageCPanel_imgUserImage"
-                                src="resources/img/profile.jpg" alt="" style="width:200px;">
+                                src="" alt="" style="width:200px;" profileAttr="imageUrl">
 
                     </div>
                     <div class="center" style="margin-top:10px">
                         <span class="normalText"
                                 id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbMSSV">
                             <span class="labelText">MSSV: </span><span class="contentLabelText" id="studentId"
-                                profileAttr="studentId">20200413</span>
+                                profileAttr="studentId"></span>
                         </span>
                     </div>
 
@@ -56,32 +56,32 @@
                 <div class="col-md-4">
                     <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo1">
                         <span class="labelText">Họ và tên: </span>
-                        <span class="contentLabelText" id="fullName" profileAttr="fullName">Trần Công Minh</span><br>
+                        <span class="contentLabelText" id="fullName" profileAttr="fullName"></span><br>
                         <span class="labelText">Năm vào trường: </span><span class="contentLabelText"
                             id="yearOfAdmission"
-                            profileAttr="yearOfAdmission">2020</span><br>
+                            profileAttr="yearOfAdmission"></span><br>
                         <span class="labelText">Bậc đào tạo: </span><span class="contentLabelText" id="educationLevel"
-                            profileAttr="educationLevel">KSCLC-TN-TT-VN-ICT</span><br>
+                            profileAttr="educationLevel"></span><br>
                         <span class="labelText">Chương trình: </span><span class="contentLabelText" id="program"
-                            profileAttr="program">Công nghệ thông tin Việt-Pháp 2020</span><br>
+                            profileAttr="program"></span><br>
                         <span class="labelText">Khoa/Viện quản lý: </span><span class="contentLabelText"
                             id="managingDepartment"
-                            profileAttr="managingDepartment">Trường Công nghệ Thông tin và Truyền thông</span><br>
+                            profileAttr="managingDepartment"></span><br>
                         <span class="labelText">Tình trạng học tập: </span><span class="contentLabelText"
                             id="studyStatus"
-                            profileAttr="studyStatus">Học</span><br>
+                            profileAttr="studyStatus"></span><br>
                     </span>
                 </div>
                 <div class="col-md-4">
                     <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo2">
                         <span class="labelText">Giới tính: </span><span class="contentLabelText" id="gender"
-                            profileAttr="gender">Nam</span><br>
+                            profileAttr="gender"></span><br>
                         <span class="labelText">Lớp: </span><span class="contentLabelText" id="class"
-                            profileAttr="class">Việt Pháp 01-K65</span><br>
+                            profileAttr="class"></span><br>
                         <span class="labelText">Khóa học: </span><span class="contentLabelText" id="course"
-                            profileAttr="course">65</span><br>
+                            profileAttr="course"></span><br>
                         <span class="labelText">Email: </span><span class="contentLabelText" id="email"
-                            profileAttr="email">minh.tc200413@sis.hust.edu.vn</span><br>
+                            profileAttr="email"></span><br>
                     </span>
                 </div>
             </div>
@@ -197,6 +197,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
+        <script src="resources/js/info.js"></script>
         <script>
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
@@ -204,14 +205,22 @@
         </script>
         <script>
             window.onload = function () {
+                if (!localStorage.getItem('profileInfo')) {
+                    localStorage.setItem('profileInfo', JSON.stringify(TTSV));
+                }
                 let data = JSON.parse(localStorage.getItem('profileInfo'));
+                TTSV = data;
+                console.log("TTSV", TTSV);
 
                 if (data) {
                     let elements = document.querySelectorAll('[profileAttr]');
                     for (let element of elements) {
                         if (data[element.getAttribute('profileAttr')]) {
                             element.innerText = data[element.getAttribute('profileAttr')];
-                        }
+                            if (element.getAttribute('profileAttr') == 'imageUrl') {
+                                element.src = TTSV.imageUrl;
+                            }
+                        } 
                     }
                 }
             }
@@ -220,9 +229,12 @@
                 let data = {};
                 let elements = document.querySelectorAll('[profileAttr]');
                 for (let element of elements) {
-                    data[element.getAttribute('profileAttr')] = element.innerText;
+                    if (element.getAttribute('profileAttr') === 'imageUrl') {
+                        data[element.getAttribute('profileAttr')] = element.src;
+                    } else {
+                        data[element.getAttribute('profileAttr')] = element.innerText;
+                    }
                 }
-
                 localStorage.setItem('profileInfo', JSON.stringify(data));
             }
         </script>

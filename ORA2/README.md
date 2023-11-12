@@ -10,6 +10,6 @@ Các tiêu chí chấm điểm:
 - Xử lý button Reset, reset lại các trường thông tin về trạng thái ban đầu và in ra console: 7 điểm
 - Xử lý button OK, cập nhật các trường thông tin vào object TTSV và in ra console: 8 điểm
 - In nội dung object TTSV ra log đúng trong 3 trường hợp: OK, Cancel, Reset: 9 điểm
-- Xử lý upload file ảnh và cập nhật vào trang TTSV: 10 điểm
+- Xử lý upload file ảnh và cập nhật vào trang TTSV: 10 điểm 
 
 ![ora2-requirement](./ora2-requirement.JPG)

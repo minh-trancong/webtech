@@ -13,21 +13,45 @@
                 crossorigin="anonymous">
     </head>
     <body>
-        <div class="container">
-            <div class="MainContentTitle">
-                <h3 class="Title">THAY ĐỔI THÔNG TIN CÁ NHÂN</h3>
-                <hr>
-            </div>
-            <form id="ProfileForm" onsubmit="saveData();">
-                <h3 class="Title">THÔNG TIN CÁ NHÂN</h3>
-                <hr>
+        <div class="MainContentTitle">
+            <h3 class="Title">THÔNG TIN CÁ NHÂN</h3>
+            <hr>
+        </div>
+        <form id="ProfileForm" onsubmit="saveData();">
+            <div class="MainContent">
                 <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="studentId" class="labelText">MSSV: </label>
-                            <input type="text" class="form-control" id="studentId" placeholder="Nhập mã số sinh viên"
-                                    profileAttr="studentId">
+                    <div class="col-md-12 d-flex justify-content-between align-items-center">
+                        <span class="Title" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbt1">THÔNG TIN SINH VIÊN</span>
+                        <div>
+                            <button type="submit" class="btn btn-primary">OK</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">Cancel</button>
+                            <button type="button" class="btn btn-warning" onclick="setDefaultValues()">Reset</button>
                         </div>
+                    </div>
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dxpnlControl_Mulberry center"
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_UserImageCPanel">
+
+                            <input type="file" id="imageUpload" accept="image/*">
+                            <img class="img-thumbnail dxeImage_Mulberry"
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_UserImageCPanel_imgUserImage"
+                                src="" alt="" style="width:200px;" profileAttr="imageUrl">
+
+                        </div>
+                        <div class="center" style="margin-top:10px">
+                            <div class="form-group">
+                                <label for="studentId" class="labelText">MSSV: </label>
+                                <input type="text" class="form-control" id="studentId" placeholder="Nhập mã số sinh viên"
+                                        profileAttr="studentId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="name" class="labelText">Họ và tên:</label>
                             <input type="text" class="form-control" id="name" placeholder="Nhập họ và tên"
@@ -42,6 +66,7 @@
                             <label for="educationLevel" class="labelText">Bậc đào tạo:</label>
                             <select class="form-control" id="educationLevel" profileAttr="educationLevel">
                                 <option value="" hidden>Chọn bậc học</option>
+                                <option value="KSCLC-TN-TT-VN-ICT">KSCLC-TN-TT-VN-ICT</option>
                                 <option value="Đại học">Đại học</option>
                                 <option value="Thạc sĩ">Thạc sĩ</option>
                                 <option value="Tiến sĩ">Tiến sĩ</option>
@@ -59,19 +84,39 @@
                         </div>
                         <div class="form-group">
                             <label for="studyStatus" class="labelText">Tình trạng học tập:</label>
-                            <input type="text" class="form-control" id="studyStatus"
-                                    placeholder="Nhập tình trạng học tập" profileAttr="studyStatus">
+                            <div id="studyStatus" class="form-control d-flex justify-content-between">
+                                <div>
+                                    <input type="radio" id="studying" name="studyStatus" value="Học">
+                                    <label for="studying">Học</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="stopped" name="studyStatus" value="Thôi học">
+                                    <label for="stopped">Thôi học</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="reserved" name="studyStatus" value="Bảo lưu">
+                                    <label for="reserved">Bảo lưu</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="gender" class="labelText">Giới tính:</label>
-                            <select class="form-control" id="gender" profileAttr="gender">
-                                <option value="" hidden>Chọn giới tính</option>
-                                <option value="Nam">Nam</option>
-                                <option value="Nữ">Nữ</option>
-                                <option value="Khác">Khác</option>
-                            </select>
+                            <div id="gender" class="form-control d-flex justify-content-between">
+                                <div>
+                                    <input type="radio" id="male" name="gender" value="Nam">
+                                    <label for="male">Nam</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="female" name="gender" value="Nữ">
+                                    <label for="female">Nữ</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="other" name="gender" value="Khác">
+                                    <label for="other">Khác</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="class" class="labelText">Lớp: </label>
@@ -90,229 +135,102 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="Title">THÔNG TIN HỌC TẬP</h3>
-                <hr>
                 <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="semesterSummary" class="labelText">Tổng kết học kỳ:</label>
-                            <input type="text" class="form-control" id="semesterSummary"
-                                    placeholder="Nhập tổng kết học kỳ" profileAttr="semesterSummary">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cumulativeAverage" class="labelText">Trung bình tích lũy:</label>
-                            <input type="text" class="form-control" id="cumulativeAverage"
-                                    placeholder="Nhập trung bình tích lũy" profileAttr="cumulativeAverage">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="registeredCreditDebt" class="labelText">Số TC nợ đăng ký:</label>
-                            <input type="number" class="form-control" id="registeredCreditDebt"
-                                    placeholder="Nhập số TC nợ đăng ký" profileAttr="registeredCreditDebt">
-                        </div>
+                    <div class="col-md-12">
+                        <span class="Title" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbT2">THÔNG TIN HỌC TẬP</span>
                     </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="accumulatedCredits" class="labelText">Số TC tích lũy:</label>
-                            <input type="number" class="form-control" id="accumulatedCredits"
-                                    placeholder="Nhập số TC tích lũy" profileAttr="accumulatedCredits">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="studentLevel" class="labelText">Trình độ sinh viên:</label>
-                            <input type="text" class="form-control" id="studentLevel"
-                                    placeholder="Nhập trình độ sinh viên" profileAttr="studentLevel">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="labelText">Mức cảnh báo:</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel1"
-                                        value="M0" profileAttr="warningLevel" checked>
-                                <label class="form-check-label" for="warningLevel1">
-                                    M0
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel2"
-                                        value="M1" profileAttr="warningLevel">
-                                <label class="form-check-label" for="warningLevel2">
-                                    M1
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel3"
-                                        value="M2" profileAttr="warningLevel">
-                                <label class="form-check-label" for="warningLevel3">
-                                    M2
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="warningLevel" id="warningLevel4"
-                                        value="M3" profileAttr="warningLevel">
-                                <label class="form-check-label" for="warningLevel4">
-                                    M3
-                                </label>
-                            </div>
-                        </div>
-
+                    <div class="col-md-12">
+                        <hr>
                     </div>
                 </div>
-                <h3 class="Title">THÔNG TIN CÁ NHÂN</h3>
-                <hr>
+    
                 <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="ethnicity" class="labelText">Dân tộc:</label>
-                            <input type="text" class="form-control" id="ethnicity" placeholder="Nhập dân tộc" profileAttr="ethnicity">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="highSchoolGraduationYear" class="labelText">Năm TN cấp 3:</label>
-                            <input type="number" class="form-control" id="highSchoolGraduationYear" placeholder="Nhập năm TN cấp 3" profileAttr="highSchoolGraduationYear">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address" class="labelText">Địa chỉ:</label>
-                            <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ" profileAttr="address">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="idNumber" class="labelText">Số CMTND:</label>
-                            <input type="number" class="form-control" id="idNumber" placeholder="Nhập số CMTND" profileAttr="idNumber">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="placeOfIssue" class="labelText">Nơi cấp:</label>
-                            <input type="text" class="form-control" id="placeOfIssue" placeholder="Nhập nơi cấp" profileAttr="placeOfIssue">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fatherName" class="labelText">Họ tên bố:</label>
-                            <input type="text" class="form-control" id="fatherName" placeholder="Nhập họ tên bố" profileAttr="fatherName">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fatherBirthYear" class="labelText">Năm sinh bố:</label>
-                            <input type="number" class="form-control" id="fatherBirthYear" placeholder="Nhập năm sinh bố" profileAttr="fatherBirthYear">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fatherOccupation" class="labelText">Nghề nghiệp bố:</label>
-                            <input type="text" class="form-control" id ="fatherOccupation" placeholder ="Nhập nghề nghiệp bố " profileAttr ="fatherOccupation ">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fatherPhone" class="labelText">Điện thoại bố:</label>
-                            <input type="tel" class="form-control" id="fatherPhone" placeholder="Nhập số điện thoại của bố" profileAttr="fatherPhone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fatherEmail" class="labelText">Email bố:</label>
-                            <input type="email" class="form-control" id="fatherEmail" placeholder="Nhập email của bố" profileAttr="fatherEmail">
-                        </div>
+                    <div class="col-md-6">
+                        <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo3">
+                            <span class="labelText">Tổng kết học kỳ: </span><span class="contentLabelText"
+                                id="semesterSummary" profileAttr="semesterSummary">20222</span><br>
+                            <span class="labelText">Trung bình tích lũy: </span><span class="contentLabelText"
+                                id="cumulativeAverage" profileAttr="cumulativeAverage">3.xx</span><br>
+                            <span class="labelText">Số TC nợ đăng ký: </span><span class="contentLabelText"
+                                id="registeredCreditDebt" profileAttr="registeredCreditDebt">0</span><br>
+                        </span>
                     </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="religion" class="labelText">Tôn giáo:</label>
-                            <input type="text" class="form-control" id="religion" placeholder="Nhập tôn giáo" profileAttr="religion">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="highSchool" class="labelText">Trường THPT:</label>
-                            <input type="text" class="form-control" id="highSchool" placeholder="Nhập trường THPT" profileAttr="highSchool">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="residence" class="labelText">Hộ khẩu:</label>
-                            <input type="text" class="form-control" id="residence" placeholder="Nhập hộ khẩu" profileAttr="residence">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phoneNumber" class="labelText">Số điện thoại:</label>
-                            <input type="tel" class="form-control" id ="phoneNumber" placeholder ="Nhập số điện thoại" profileAttr ="phoneNumber">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="motherName" class="labelText">Họ tên mẹ:</label>
-                            <input type="text" class="form-control" id="motherName" placeholder="Nhập họ tên mẹ" profileAttr="motherName">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="motherBirthYear" class="labelText">Năm sinh mẹ:</label>
-                            <input type="number" class="form-control" id="motherBirthYear" placeholder="Nhập năm sinh mẹ" profileAttr="motherBirthYear">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="motherOccupation" class="labelText">Nghề nghiệp mẹ:</label>
-                            <input type="text" class="form-control" id ="motherOccupation" placeholder ="Nhập nghề nghiệp mẹ" profileAttr ="motherOccupation">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="motherPhone" class="labelText">Điện thoại mẹ:</label>
-                            <input type="tel" class="form-control" id="motherPhone" placeholder="Nhập số điện thoại của mẹ" profileAttr="motherPhone">
-                        </div>
-                        <div class="form-group">
-                            <label for="motherEmail" class="labelText">Email mẹ:</label>
-                            <input type="email" class="form-control" id="motherEmail" placeholder="Nhập email của mẹ" profileAttr="motherEmail">
-                        </div>
+                    <div class="col-md-6">
+                        <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo4">
+                            <span class="labelText">Số TC tích lũy: </span><span class="contentLabelText"
+                                id="accumulatedCredits" profileAttr="accumulatedCredits">112</span><br>
+                            <span class="labelText">Trình độ sinh viên: </span><span class="contentLabelText"
+                                id="studentLevel" profileAttr="studentLevel">4</span><br>
+                            <span class="labelText">Mức cảnh báo: </span><span class="contentLabelText" id="warningLevel"
+                                profileAttr="warningLevel">M0</span><br>
+                         </span>
                     </div>
-
                 </div>
-
-                <!-- Add more fields as necessary -->
-                <button type="submit" class="btn btn-primary">OK</button>
-                <button type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">Cancel
-                </button>
-            </form>
-        </div>
-
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="Title" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbT3">THÔNG TIN CÁ NHÂN</span>
+                    </div>
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo5">
+                            <span class="labelText">Dân tộc: </span><span class="contentLabelText" id="ethnicity"
+                                profileAttr="ethnicity">KINH</span><br>
+                            <span class="labelText">Năm TN cấp 3: </span><span class="contentLabelText"
+                                id="highSchoolGraduationYear" profileAttr="highSchoolGraduationYear">2020</span><br>
+                            <span class="labelText">Địa chỉ: </span><span class="contentLabelText" id="address"
+                                profileAttr="address"> XÃ ****, THỊ XÃ ****, TỈNH QUẢNG NINH</span><br>
+                            <span class="labelText">Số CMTND: </span><span class="contentLabelText" id="idNumber"
+                                profileAttr="idNumber">022***08</span><br>
+                            <span class="labelText">Nơi cấp: </span><span class="contentLabelText" id="placeOfIssue"
+                                profileAttr="placeOfIssue">QUẢNG NINH</span><br>
+                            <span class="labelText">Họ tên bố: </span><span class="contentLabelText" id="fatherName"
+                                profileAttr="fatherName">TRẦN ****</span><br>
+                            <span class="labelText">Năm sinh: </span><span class="contentLabelText" id="fatherBirthYear"
+                                profileAttr="fatherBirthYear">19**</span><br>
+                            <span class="labelText">Nghề nghiệp: </span><span class="contentLabelText" id="fatherOccupation"
+                                profileAttr="fatherOccupation">NHÂN VIÊN PHÒNG ĐIỀU KHIỂN</span><br>
+                            <span class="labelText">Điện thoại: </span><span class="contentLabelText" id="fatherPhone"
+                                profileAttr="fatherPhone">090***99</span><br>
+                            <span class="labelText">Email: </span><span class="contentLabelText" id="fatherEmail"
+                                profileAttr="fatherEmail">TH*@*IL.COM</span><br>
+                        </span>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo6">
+                            <span class="labelText">Tôn giáo: </span><span class="contentLabelText" id="religion"
+                                profileAttr="religion">KHÔNG</span><br>
+                            <span class="labelText">Trường THPT: </span><span class="contentLabelText" id="highSchool"
+                                profileAttr="highSchool">THPT CHUYÊN KHOA HỌC TỰ NHIÊN, QUẬN THANH XUÂN, THÀNH PHỐ HÀ NỘI</span><br>
+                            <span class="labelText">Hộ khẩu: </span><span class="contentLabelText" id="residence"
+                                profileAttr="residence"> XÃ ****, THỊ XÃ ****, TỈNH QUẢNG NINH</span><br>
+                            <span class="labelText">Số Điện thoại: </span><span class="contentLabelText" id="phoneNumber"
+                                profileAttr="phoneNumber">035***47</span><br>
+                            <span class="labelText">Họ tên mẹ: </span><span class="contentLabelText" id="motherName"
+                                profileAttr="motherName">NGUYỄN ****</span><br>
+                            <span class="labelText">Năm sinh: </span><span class="contentLabelText" id="motherBirthYear"
+                                profileAttr="motherBirthYear">19**</span><br>
+                            <span class="labelText">Nghề nghiệp: </span><span class="contentLabelText" id="motherOccupation"
+                                profileAttr="motherOccupation">NỘI TRỢ</span><br>
+                            <span class="labelText">Điện thoại: </span><span class="contentLabelText" id="motherPhone"
+                                profileAttr="motherPhone">036***88</span><br>
+                            <span class="labelText">Email: </span><span class="contentLabelText" id="motherEmail"
+                                profileAttr="motherEmail">NH*@*IL.COM</span><br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script>
-            window.onload = function () {
-                let data = JSON.parse(localStorage.getItem('profileInfo'));
-
-                if (data) {
-                    // Lấy danh sách tất cả các phần tử có thuộc tính name
-                    let elements = document.querySelectorAll('#ProfileForm [profileAttr]');
-
-                    // Lặp qua từng phần tử và đặt giá trị placeholder bằng giá trị tương ứng từ data
-                    for (let element of elements) {
-                        if (data[element.getAttribute('profileAttr')]) {
-                            if (element.tagName === 'SELECT') {
-                                element.options[0].text = data[element.getAttribute('profileAttr')];
-                            } else if (element.type === 'radio') {
-                                if (element.value === data[element.getAttribute('profileAttr')]) {
-                                    element.checked = true;
-                                }
-                            } else {
-                                element.placeholder = data[element.getAttribute('profileAttr')];
-                            }
-                        }
-                    }
-                }
-            }
-
-            function saveData() {
-                let data = JSON.parse(localStorage.getItem('profileInfo'));
-                let elements = document.querySelectorAll('#ProfileForm [profileAttr]');
-
-                for (let e of elements) {
-                    if (e.type === 'radio') {
-                        if (e.checked) {
-                            data[e.getAttribute('profileAttr')] = e.value;
-                        }
-                    } else if (e.value !== '') {
-                        data[e.getAttribute('profileAttr')] = e.value;
-                    }
-                }
-
-                localStorage.setItem('profileInfo', JSON.stringify(data));
-                alert('Thay đổi thông tin thành công!');
-            }
-    </script>
+        <script src="resources/js/info.js"> </script>
+        <script src="resources/js/edit-info.js"></script>
     </body>
 </html>

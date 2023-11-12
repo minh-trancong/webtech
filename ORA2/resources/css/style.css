@@ -531,3 +531,13 @@ html, body {
     color: #FFFFFF;
     background-color: #9C1010;
 }
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.labelText {
+    margin-right: 10px;
+    width: 200px;
+}
