@@ -90,3 +90,59 @@ document.getElementById('imageUpload').addEventListener('change', function(e) {
         console.log('Network error: ' + error);
     });
 });
+
+
+function resetValues() {
+    let data = {
+        studentId: "20200413",
+        fullName: "Trần Công Minh",
+        yearOfAdmission: 2020,
+        educationLevel: "KSCLC-TN-TT-VN-ICT",
+        program: "Công nghệ thông tin Việt-Pháp 2020",
+        managingDepartment: "Trường Công nghệ Thông tin và Truyền thông",
+        studyStatus: "Học",
+        gender: "Nam",
+        class: "Việt Pháp 01-K65",
+        course: "65",
+        email: "minh.tc200413@sis.hust.edu.vn",
+        imageUrl: "resources/img/profile.jpg"
+    };
+
+    if (data) {
+        let elements = document.querySelectorAll('#ProfileForm [profileAttr]');
+
+        for (let element of elements) {
+            if (data[element.getAttribute('profileAttr')]) {
+                if (element.tagName === 'SELECT') {
+                    element.options[0].text = data[element.getAttribute('profileAttr')];
+                } else if (element.type === 'radio') {
+                    if (element.value === data[element.getAttribute('profileAttr')]) {
+                        element.checked = true;
+                    }
+                } else {
+                    element.placeholder = data[element.getAttribute('profileAttr')];
+                    element.value = data[element.getAttribute('profileAttr')];
+                }
+            }
+        }
+    }
+
+    var genderRadios = document.getElementsByName('gender');
+    for (var i = 0, length = genderRadios.length; i < length; i++) {
+        if (genderRadios[i].value == data.gender) {
+            genderRadios[i].checked = true;
+            break;
+        }
+    }
+
+    var studyStatusRadios = document.getElementsByName('studyStatus');
+    for (var i = 0, length = studyStatusRadios.length; i < length; i++) {
+        if (studyStatusRadios[i].value == data.studyStatus) {
+            studyStatusRadios[i].checked = true;
+            break;
+        }
+    }
+
+    document.getElementById('ctl00_ctl00_contentPane_MainPanel_MainContent_UserImageCPanel_imgUserImage').src = TTSV.imageUrl;
+    console.log("TTSV", data);
+}   
