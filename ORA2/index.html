@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>CTT | Thông tin cá nhân </title>
+
+        <link rel="icon" href="resources/img/logo-hust.png" type="image/x-icon">
+
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="MainContentTitle">
+            <h3 class="Title">THÔNG TIN CÁ NHÂN</h3>
+            <hr>
+        </div>
+        <div class="MainContent">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="Title"
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbt1">THÔNG TIN SINH VIÊN</span>
+                    <a href="edit-info.html" class="btn btn-light" style="margin-left: 10px"
+                            data-toggle="tooltip" data-placement="right" title="Thay đổi thông tin sinh viên"
+                            onclick="saveData()">
+                        <img class="icon" src="resources/img/icons8-edit-text-100.png"/>
+                    </a>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dxpnlControl_Mulberry center"
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_UserImageCPanel">
+
+                        <img class="img-thumbnail dxeImage_Mulberry"
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_UserImageCPanel_imgUserImage"
+                                src="" alt="" style="width:200px;" profileAttr="imageUrl">
+
+                    </div>
+                    <div class="center" style="margin-top:10px">
+                        <span class="normalText"
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbMSSV">
+                            <span class="labelText">MSSV: </span><span class="contentLabelText" id="studentId"
+                                profileAttr="studentId"></span>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo1">
+                        <span class="labelText">Họ và tên: </span>
+                        <span class="contentLabelText" id="fullName" profileAttr="fullName"></span><br>
+                        <span class="labelText">Năm vào trường: </span><span class="contentLabelText"
+                            id="yearOfAdmission"
+                            profileAttr="yearOfAdmission"></span><br>
+                        <span class="labelText">Bậc đào tạo: </span><span class="contentLabelText" id="educationLevel"
+                            profileAttr="educationLevel"></span><br>
+                        <span class="labelText">Chương trình: </span><span class="contentLabelText" id="program"
+                            profileAttr="program"></span><br>
+                        <span class="labelText">Khoa/Viện quản lý: </span><span class="contentLabelText"
+                            id="managingDepartment"
+                            profileAttr="managingDepartment"></span><br>
+                        <span class="labelText">Tình trạng học tập: </span><span class="contentLabelText"
+                            id="studyStatus"
+                            profileAttr="studyStatus"></span><br>
+                    </span>
+                </div>
+                <div class="col-md-4">
+                    <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo2">
+                        <span class="labelText">Giới tính: </span><span class="contentLabelText" id="gender"
+                            profileAttr="gender"></span><br>
+                        <span class="labelText">Lớp: </span><span class="contentLabelText" id="class"
+                            profileAttr="class"></span><br>
+                        <span class="labelText">Khóa học: </span><span class="contentLabelText" id="course"
+                            profileAttr="course"></span><br>
+                        <span class="labelText">Email: </span><span class="contentLabelText" id="email"
+                            profileAttr="email"></span><br>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="Title" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbT2">THÔNG TIN HỌC TẬP</span>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo3">
+                        <span class="labelText">Tổng kết học kỳ: </span><span class="contentLabelText"
+                            id="semesterSummary" profileAttr="semesterSummary">20222</span><br>
+                        <span class="labelText">Trung bình tích lũy: </span><span class="contentLabelText"
+                            id="cumulativeAverage" profileAttr="cumulativeAverage">3.xx</span><br>
+                        <span class="labelText">Số TC nợ đăng ký: </span><span class="contentLabelText"
+                            id="registeredCreditDebt" profileAttr="registeredCreditDebt">0</span><br>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo4">
+                        <span class="labelText">Số TC tích lũy: </span><span class="contentLabelText"
+                            id="accumulatedCredits" profileAttr="accumulatedCredits">112</span><br>
+                        <span class="labelText">Trình độ sinh viên: </span><span class="contentLabelText"
+                            id="studentLevel" profileAttr="studentLevel">4</span><br>
+                        <span class="labelText">Mức cảnh báo: </span><span class="contentLabelText" id="warningLevel"
+                            profileAttr="warningLevel">M0</span><br>
+                     </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="Title" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbT3">THÔNG TIN CÁ NHÂN</span>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo5">
+                        <span class="labelText">Dân tộc: </span><span class="contentLabelText" id="ethnicity"
+                            profileAttr="ethnicity">KINH</span><br>
+                        <span class="labelText">Năm TN cấp 3: </span><span class="contentLabelText"
+                            id="highSchoolGraduationYear" profileAttr="highSchoolGraduationYear">2020</span><br>
+                        <span class="labelText">Địa chỉ: </span><span class="contentLabelText" id="address"
+                            profileAttr="address"> XÃ ****, THỊ XÃ ****, TỈNH QUẢNG NINH</span><br>
+                        <span class="labelText">Số CMTND: </span><span class="contentLabelText" id="idNumber"
+                            profileAttr="idNumber">022***08</span><br>
+                        <span class="labelText">Nơi cấp: </span><span class="contentLabelText" id="placeOfIssue"
+                            profileAttr="placeOfIssue">QUẢNG NINH</span><br>
+                        <span class="labelText">Họ tên bố: </span><span class="contentLabelText" id="fatherName"
+                            profileAttr="fatherName">TRẦN ****</span><br>
+                        <span class="labelText">Năm sinh: </span><span class="contentLabelText" id="fatherBirthYear"
+                            profileAttr="fatherBirthYear">19**</span><br>
+                        <span class="labelText">Nghề nghiệp: </span><span class="contentLabelText" id="fatherOccupation"
+                            profileAttr="fatherOccupation">NHÂN VIÊN PHÒNG ĐIỀU KHIỂN</span><br>
+                        <span class="labelText">Điện thoại: </span><span class="contentLabelText" id="fatherPhone"
+                            profileAttr="fatherPhone">090***99</span><br>
+                        <span class="labelText">Email: </span><span class="contentLabelText" id="fatherEmail"
+                            profileAttr="fatherEmail">TH*@*IL.COM</span><br>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <span class="normalText" id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextInfo6">
+                        <span class="labelText">Tôn giáo: </span><span class="contentLabelText" id="religion"
+                            profileAttr="religion">KHÔNG</span><br>
+                        <span class="labelText">Trường THPT: </span><span class="contentLabelText" id="highSchool"
+                            profileAttr="highSchool">THPT CHUYÊN KHOA HỌC TỰ NHIÊN, QUẬN THANH XUÂN, THÀNH PHỐ HÀ NỘI</span><br>
+                        <span class="labelText">Hộ khẩu: </span><span class="contentLabelText" id="residence"
+                            profileAttr="residence"> XÃ ****, THỊ XÃ ****, TỈNH QUẢNG NINH</span><br>
+                        <span class="labelText">Số Điện thoại: </span><span class="contentLabelText" id="phoneNumber"
+                            profileAttr="phoneNumber">035***47</span><br>
+                        <span class="labelText">Họ tên mẹ: </span><span class="contentLabelText" id="motherName"
+                            profileAttr="motherName">NGUYỄN ****</span><br>
+                        <span class="labelText">Năm sinh: </span><span class="contentLabelText" id="motherBirthYear"
+                            profileAttr="motherBirthYear">19**</span><br>
+                        <span class="labelText">Nghề nghiệp: </span><span class="contentLabelText" id="motherOccupation"
+                            profileAttr="motherOccupation">NỘI TRỢ</span><br>
+                        <span class="labelText">Điện thoại: </span><span class="contentLabelText" id="motherPhone"
+                            profileAttr="motherPhone">036***88</span><br>
+                        <span class="labelText">Email: </span><span class="contentLabelText" id="motherEmail"
+                            profileAttr="motherEmail">NH*@*IL.COM</span><br>
+                    </span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+            <span class="dxeBaschúe_Mulberry normalText"
+                    id="ctl00_ctl00_contentPane_MainPanel_MainContent_lbTextNote"><span><span
+                    class="labelText">Ghi chú: </span></span><span class="contentLabelText">Nếu sinh viên thấy thông
+                tin của mình chưa chính xác, xin vui lòng cập nhật lại.</span></span>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+        <script src="resources/js/info.js"></script>
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+        <script>
+            window.onload = function () {
+                if (!localStorage.getItem('profileInfo')) {
+                    localStorage.setItem('profileInfo', JSON.stringify(TTSV));
+                }
+                let data = JSON.parse(localStorage.getItem('profileInfo'));
+                TTSV = data;
+                console.log("TTSV", TTSV);
+
+                if (data) {
+                    let elements = document.querySelectorAll('[profileAttr]');
+                    for (let element of elements) {
+                        if (data[element.getAttribute('profileAttr')]) {
+                            element.innerText = data[element.getAttribute('profileAttr')];
+                            if (element.getAttribute('profileAttr') == 'imageUrl') {
+                                element.src = TTSV.imageUrl;
+                            }
+                        } 
+                    }
+                }
+            }
+
+            function saveData() {
+                let data = {};
+                let elements = document.querySelectorAll('[profileAttr]');
+                for (let element of elements) {
+                    if (element.getAttribute('profileAttr') === 'imageUrl') {
+                        data[element.getAttribute('profileAttr')] = element.src;
+                    } else {
+                        data[element.getAttribute('profileAttr')] = element.innerText;
+                    }
+                }
+                localStorage.setItem('profileInfo', JSON.stringify(data));
+            }
+        </script>
+    </body>
+</html>
