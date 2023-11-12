@@ -1,5 +1,4 @@
 function setDefaultValues() {
-    console.log("Do reset");
     let data = JSON.parse(localStorage.getItem('profileInfo'));
     TTSV = data;
 
@@ -16,6 +15,7 @@ function setDefaultValues() {
                     }
                 } else {
                     element.placeholder = data[element.getAttribute('profileAttr')];
+                    element.value = data[element.getAttribute('profileAttr')];
                 }
             }
         }
